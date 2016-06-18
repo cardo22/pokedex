@@ -9,6 +9,10 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+def assets_precompiler
+    precompile = config.assets.initialize_on_precompile = false
+return precompile
+end
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -17,7 +21,6 @@ Bundler.require(*Rails.groups)
 
 module PokemonComponents
   class Application < Rails::Application
-    config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
