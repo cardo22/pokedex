@@ -9,6 +9,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+config.serve_static_assets = true
 config.assets.initialize_on_precompile = false
 # require "rails/test_unit/railtie"
 
